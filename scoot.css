@@ -1,10 +1,11 @@
  body{
  	background: #f1eae2;
+  font-family: sofia-pro,sans-serif;
  }
 
 
 .navbar-inverse {
-  background-color: #f1eae2;
+  /*background-color: #22E822;*/
   
  }
 
@@ -25,3 +26,12 @@
     background: #fff;
     border-radius: 100px;
     margin: 10px auto 0;
+
+.price{
+    /*background-color: #22E822 ;*/
+    text-transform: lowercase;
+}
+
+a {
+  color: white;
+}
