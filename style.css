@@ -15,9 +15,14 @@
 .container.main{
   padding-top: 106px;
 }
+ 
+.description {
+  text-align: center;
+}
 
-
-
+.column img {
+  display: block;
+}
 
 
 
