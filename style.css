@@ -28,9 +28,6 @@
 
 
 
-
-
-
 /* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
 .navbar-alignit .navbar-header {
 	  -webkit-transform-style: preserve-3d;
@@ -59,3 +56,5 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+
