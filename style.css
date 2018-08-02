@@ -24,46 +24,10 @@
   display: block;
 }
 
-<<<<<<< HEAD
-
-
-
-
-/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
-.navbar-alignit .navbar-header {
-	  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  height: 50px;
-}
-.navbar-alignit .navbar-brand {
-	top: 50%;
-	display: block;
-	position: relative;
-	height: auto;
-	transform: translate(0,-50%);
-	margin-right: 15px;
-  margin-left: 15px;
-}
-
-
-
-
-
-.navbar-nav>li>.dropdown-menu {
-	z-index: 9999;
-=======
 * {
   margin: 0; padding: 0;
->>>>>>> 11866c7baad78ceb33f161fb55b2bf6e154f07aa
 }
 body {
-<<<<<<< HEAD
-  font-family: 'Roboto', sans-serif;
-}
-
-
-=======
   font-size: 100%;
 }
 .accordion {
@@ -137,4 +101,9 @@ body {
 .accordion .opened-for-codepen {
   display: block;
 }
->>>>>>> 11866c7baad78ceb33f161fb55b2bf6e154f07aa
+
+
+
+
+
+/* login */
