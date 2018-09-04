@@ -20,31 +20,31 @@ app.get("/", function(req,res){
 });
 
 app.get("/contact", function(req,res){
-    res.redirect("contact");
+    res.render("contact");
 });
 
 app.get("/about", function(req,res){
-    res.redirect("about");
+    res.render("about");
 });
 
 app.get("/login", function(req,res){
-    res.redirect("login");
+    res.render("login");
 });
 
 app.get("/newfaqs", function(req,res){
-    res.redirect("newfaqs");
+    res.render("newfaqs");
 });
 
 app.get("/payment", function(req,res){
-    res.redirect("payment");
+    res.render("payment");
 });
 
 app.get("/pricing", function(req,res){
-    res.redirect("pricing");
+    res.render("pricing");
 });
 
 app.get("/signupform", function(req,res){
-    res.redirect("contact");
+    res.render("contact");
 });
 
 
