@@ -87,7 +87,9 @@ app.get("/faq", function(req,res){
 
 //register route
 app.post("/register", function(req,res){
-    var newRider = new Rider({username:req.body.username});
+    var newRider = new Rider({username:req.body.username,
+    email:req.body.email,aadhar:req.body.aadhar_no,dob:req.body.dob,
+month:req.body.month,year:req.body.year,gender:req.body.gender});
     Rider.register(newRider , req.body.password, function(err,user){
         if(err){
             console.log(err);
