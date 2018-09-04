@@ -35,6 +35,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //routes
 app.get("/", function(req,res){
+    res.render("landing");
+});
+
+app.get("/index",function(req,res){
     res.render("index");
 });
 
