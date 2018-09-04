@@ -22,7 +22,10 @@ passport.use(new LocalStrategy(Rider.authenticate()));
 passport.serializeUser(Rider.serializeUser());
 passport.deserializeUser(Rider.deserializeUser());
 
-
+app.use(function(req,res,next){
+    res.locals.currentUser = req.user;
+    next();
+});
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -62,6 +65,20 @@ app.get("/pricing", function(req,res){
 app.get("/register", function(req,res){
     res.render("register");
 });
+
+app.get("/pricing", function(req,res){
+    res.render("pricing");
+});
+
+app.get("/payment", function(req,res){
+    res.render("payment");
+});
+
+app.get("/faq", function(req,res){
+    res.render("faq");
+});
+
+
 
 
 //register route
