@@ -1,0 +1,7 @@
+body {
+    background: url('https://cdn.theatlantic.com/assets/media/img/mt/2018/05/29541207_153054288698808_112707312010919936_n/lead_720_405.jpg?mod=1533691463') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
