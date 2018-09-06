@@ -82,12 +82,18 @@ app.get("/faq", function(req,res){
     res.render("faq");
 });
 
+<<<<<<< HEAD
 app.get("/ridefare", function (req, res) {
     res.render("ridefare");
 });
 
 
 
+=======
+app.get("/fleet", function(req,res){
+    res.render("fleet");
+})
+>>>>>>> f29652ad9de3f9490fd5940ce070032bd3d88704
 
 
 
