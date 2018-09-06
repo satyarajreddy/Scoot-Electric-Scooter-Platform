@@ -41,22 +41,22 @@ body {
   
   
   .slideshow li:nth-child(1) { 
-    background-image: url(https://cms.qz.com/wp-content/uploads/2018/04/electric-scooters-guide-to-renting-spin-bird-limebike.jpg?quality=80&strip=all&w=5472) 
+    background-image: url(https://www.bikefolded.com/wp-content/uploads/2016/12/xiaomi-mi-electric-scooter.jpg) 
   }
   .slideshow li:nth-child(2) { 
-    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+    background-image: url(https://cms.qz.com/wp-content/uploads/2018/04/electric-scooters-guide-to-renting-spin-bird-limebike.jpg?quality=80&strip=all&w=5472);
     animation-delay: 10s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(http://i.imgur.com/emvhOnb.jpg);
+    background-image: url(http://xiaomi-mi.com/uploads/ck/xiaomi-mijia-electric-scooter-009.jpg);
     animation-delay: 20s; 
   }
   .slideshow li:nth-child(4) { 
-    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+    background-image: url(https://techtablets.com/wp-content/uploads/2017/05/Xiaomi-MIJIA-M365-Mi-Scooter-3-810x400.jpg);
     animation-delay: 30s; 
   }
   .slideshow li:nth-child(5) { 
-    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+    background-image: url(https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2018/05/bird-scooter-uptown-charlotte-skyline.jpg);
     animation-delay: 40s; 
   }
   
