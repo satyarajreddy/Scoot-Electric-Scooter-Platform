@@ -86,6 +86,10 @@ app.get("/ridefare", function (req, res) {
     res.render("ridefare");
 });
 
+app.get("/fleet", function (req, res) {
+    res.render("fleet");
+});
+
 
 
 
