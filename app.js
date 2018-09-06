@@ -82,6 +82,12 @@ app.get("/faq", function(req,res){
     res.render("faq");
 });
 
+app.get("/ridefare", function (req, res) {
+    res.render("ridefare");
+});
+
+
+
 
 
 
