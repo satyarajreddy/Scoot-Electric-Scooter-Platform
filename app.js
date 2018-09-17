@@ -90,6 +90,9 @@ app.get("/fleet", function (req, res) {
     res.render("fleet");
 });
 
+app.get("/profile", function (req, res) {
+    res.render("profile");
+});
 
 
 
