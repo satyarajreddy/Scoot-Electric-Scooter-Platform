@@ -24,6 +24,20 @@
         <input type="text" name="username" placeholder="Full Name"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
+
+
+
+      <!-- new -->
+      <div class="input-group input-group-icon">
+        <input type="text" pattern="[1-9]{1}[0-9]{9}" maxlength="10" name="number" placeholder="Mobile Number" 
+         oninvalid="this.setCustomValidity('Must contain atmost 10 digits! ')"
+        oninput="this.setCustomValidity('')"/ required >
+        <div class="input-icon"><i class="fas fa-phone"></i></div>
+      </div>
+
+
+
+
       <div class="input-group input-group-icon">
         <input type="email" name="email" placeholder="Email Adress"/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
@@ -35,7 +49,9 @@
       </div>
 
       <div class="input-group input-group-icon">
-        <input type="text" name="aadhar_no" placeholder="Aadhar Number"/>
+        <input type="text" name="aadhar_no" maxlength="12" placeholder="Aadhar Number"
+        oninvalid="this.setCustomValidity('Must contain atmost 12 digits! ')"
+        oninput="this.setCustomValidity('')"/ required>
         <div class="input-icon"><i class="fas fa-fingerprint"></i></div>
       </div>
 
