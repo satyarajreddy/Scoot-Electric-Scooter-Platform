@@ -97,6 +97,15 @@ app.get("/profile", function (req, res) {
 app.get("/profile", function (req, res) {
     res.render("profile");
 });
+app.get("/ridefare2", function (req, res) {
+    res.render("ridefare2");
+});
+app.get("/ridefare3", function (req, res) {
+    res.render("ridefare3");
+});
+app.get("/ridefare4", function (req, res) {
+    res.render("ridefare4");
+});
 
 
 
