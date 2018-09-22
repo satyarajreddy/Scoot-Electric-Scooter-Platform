@@ -98,7 +98,13 @@ app.get("/profile", function (req, res) {
     res.render("profile");
 });
 
+app.get("/newprofile", function (req, res) {
+    res.render("newprofile");
+});
 
+app.get("/rides", function (req, res) {
+    res.render("rides");
+});
 
 
 
