@@ -106,6 +106,10 @@ app.get("/ridefare3", function (req, res) {
 app.get("/ridefare4", function (req, res) {
     res.render("ridefare4");
 });
+app.get("/referral", function (req, res) {
+    res.render("referral");
+});
+
 
 
 
