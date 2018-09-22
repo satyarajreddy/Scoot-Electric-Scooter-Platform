@@ -15,7 +15,7 @@
     var copyShareUrl = copy(shareUrl);
     
     // Set value via markup or JS
-    shareUrl.value = "scoot/suman";
+    shareUrl.value = "scootsuman";
   
     // Click listener with copyShareUrl handler
     shareUrl.addEventListener('click', copyShareUrl, false);

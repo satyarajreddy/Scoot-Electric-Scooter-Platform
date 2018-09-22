@@ -4,7 +4,7 @@
 
     <!--   <div id="logo"><i class="fab fa-lyft"></i></div> -->
     <div class="main">
-        <h1>Hi Satyaraj,</h1>
+        <h1>Hi <%=currentUser.username.charAt(0).toUpperCase() + currentUser.username.substr(1)%>,</h1>
         <h2>Thank you for riding with scoot!</h2>
         <p>(September 06, 2018 at 5:21pm)</p>
     </div>
@@ -42,10 +42,10 @@
             <p class="total">Visa *0000</p>
         </div>
         <div class="receipt__grid2">
-            <p>₹35.03</p>
+            <p>₹35.00</p>
             <p>₹1.00</p>
             <p>-₹7.00</p>
-            <p class="total">₹29.03</p>
+            <p class="total">₹29.00</p>
         </div>
     </div>
     <div class="receipt__line"></div>
