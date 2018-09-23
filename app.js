@@ -141,7 +141,7 @@ app.get("/login", function(req,res){
 
 app.post("/login", passport.authenticate("local",
 {
-    successRedirect: "/",
+    successRedirect: "/index",
     failureRedirect:"/login"
 }),  function(req,res){
     // empty callback no need
@@ -153,7 +153,13 @@ app.get("/logout", function(req,res){
     res.redirect("/index");
 });
 
+app.get("/creditcard", function (req, res) {
+    res.render("creditcard");
+});
 
+app.get("/calculator", function (req, res) {
+    res.render("calculator");
+});
 
 
 
