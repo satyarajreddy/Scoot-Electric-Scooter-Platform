@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,20 +18,9 @@
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
     <meta charset="utf-8">
     <script src="/js/calendar.js"></script>
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="/stylesheets/styletest.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
-
->>>>>>> d3898a434b34e774fb0bad664e599d3ee2ef7bdf
 </head>
 
-<body>
+<body style="padding-top: 49px;">
 
 
 
@@ -41,7 +29,7 @@
       <div class="row">
         <h4>Account</h4>
         <div class="input-group input-group-icon">
-          <input type="text" name="username" placeholder="Full Name" />
+          <input type="text" name="username" placeholder="Username" / required>
           <div class="input-icon"><i class="fa fa-user"></i></div>
         </div>
 
@@ -59,7 +47,7 @@
 
 
         <div class="input-group input-group-icon">
-          <input type="email" name="email" placeholder="Email Adress" />
+          <input type="email" name="email" placeholder="Email Adress" / required>
           <div class="input-icon"><i class="fa fa-envelope"></i></div>
         </div>
         <div class="input-group input-group-icon">
@@ -81,23 +69,17 @@
         <div class="col-half">
           <h4>Date of Birth</h4>
           <div class="input-group">
-            <div class="col-third">
-              <input type="text" name="dob" placeholder="DD" />
-            </div>
-            <div class="col-third">
-              <input type="text" name="month" placeholder="MM" />
-            </div>
-            <div class="col-third">
-              <input type="text" name="year" placeholder="YYYY" />
-            </div>
+            <input type="date" name="bday" max="2018-12-31" min="1945-12-31">
+            
+            
           </div>
         </div>
         <div class="col-half">
           <h4>Gender</h4>
           <div class="input-group">
-            <input type="radio" name="gender" value="male" id="gender-male" />
+            <input type="radio" name="gender" value="male" id="gender-male" required />
             <label for="gender-male">Male</label>
-            <input type="radio" name="gender" value="female" id="gender-female" />
+            <input type="radio" name="gender" value="female" id="gender-female" required />
             <label for="gender-female">Female</label>
           </div>
         </div>
@@ -107,7 +89,7 @@
 
 
       <div>
-        <input type="submit">
+        <input type="submit" value="Submit">
       </div>
     </form>
   </div>
