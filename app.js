@@ -2,12 +2,16 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var uniqueValidator = require('mongoose-unique-validator');
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var Rider = require("./models/rider");
 //connect mongoose to mongodb
 mongoose.connect("mongodb://localhost:27017/scootdb",{ useNewUrlParser: true } );
 
+//flash
+var flash = require("connect-flash");
+app.use(flash());
 
 //auth
 app.use(require("express-session")({
@@ -15,17 +19,20 @@ app.use(require("express-session")({
     resave:false,
     saveUninitialized:false
 }));
-
+ 
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(Rider.authenticate()));
 passport.serializeUser(Rider.serializeUser());
 passport.deserializeUser(Rider.deserializeUser());
 
-app.use(function(req,res,next){
+app.use(function(req, res, next){
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
-});
+ });
+ 
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -70,7 +77,7 @@ app.get("/register", function(req,res){
     res.render("register");
 });
 
-app.get("/pricing", function(req,res){
+app.get("/pricing", isLoggedIn, function(req,res){
     res.render("pricing");
 });
 
@@ -103,7 +110,7 @@ app.get("/ridefare3", function (req, res) {
 app.get("/ridefare4", function (req, res) {
     res.render("ridefare4");
 });
-app.get("/referral", function (req, res) {
+app.get("/referral", isLoggedIn, function (req, res) {
     res.render("referral");
 });
 app.get("/calculator", function (req, res) {
@@ -125,11 +132,11 @@ app.get("/rides", function (req, res) {
 //register route
 app.post("/register", function(req,res){
     var newRider = new Rider({username:req.body.username,
-    email:req.body.email,aadhar:req.body.aadhar_no,dob:req.body.dob,
-month:req.body.month,year:req.body.year,gender:req.body.gender});
+    email:req.body.email,aadhar:req.body.aadhar_no,bday:req.body.bday,gender:req.body.gender});
     Rider.register(newRider , req.body.password, function(err,user){
         if(err){
             console.log(err);
+            req.flash("error", "Username or Aadhar already taken")
             res.redirect("register");
         }else{
             passport.authenticate("local")(req,res, function(){
@@ -138,6 +145,7 @@ month:req.body.month,year:req.body.year,gender:req.body.gender});
         }
     })
 });
+
 
 app.get("/login", function(req,res){
     res.render("login");
@@ -154,6 +162,7 @@ app.post("/login", passport.authenticate("local",
 //logout
 app.get("/logout", function(req,res){
     req.logout();
+    req.flash("success", "Logged you out")
     res.redirect("/index");
 });
 
@@ -161,13 +170,24 @@ app.get("/creditcard", function (req, res) {
     res.render("creditcard");
 });
 
+<<<<<<< HEAD
 app.get("/calculator", function (req, res) {
     res.render("calculator");
 });
+=======
+function isLoggedIn(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+        req.flash("error", "You need to be logged in to do that!");
+        res.redirect("/login");
+    
+}
+>>>>>>> 2e072999cacbafe7a1e8ee194fa20c0063f210bf
 
 
 
 //port
 app.listen(3000,function(){
     console.log("Started on port 3000");
-})
+});

@@ -46,7 +46,7 @@
                     } else {
                         var distance = response.rows[0].elements[0].distance;
                         var duration = response.rows[0].elements[0].duration;
-                        console.log(response.rows[0].elements[0].distance);
+                        response.rows[0].elements[0].distance;
                         var distance_in_kilo = distance.value / 1000; // the kilom
                         console.log(distance_in_kilo);
                         var distance_in_mile = distance.value / 1609.34; // the mile
