@@ -106,6 +106,10 @@ app.get("/ridefare4", function (req, res) {
 app.get("/referral", function (req, res) {
     res.render("referral");
 });
+app.get("/calculator", function (req, res) {
+    res.render("calculator");
+});
+
 
 
 app.get("/newprofile", function (req, res) {

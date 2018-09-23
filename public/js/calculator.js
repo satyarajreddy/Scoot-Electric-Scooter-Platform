@@ -1,69 +1,4 @@
-<html>
 
-<head>
-
-    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyA4s9hT_yVZrx5lC9KV9EUBBUg_GvYa-rY"
-        type="text/javascript"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="jumbotron">
-                <h1>Calculate the Distance Between two Addresses demo</h1>
-            </div>
-            <div class="col-md-6">
-                <form id="distance_form">
-                    <div class="form-group">
-                        <label>Origin: </label>
-                        <input id="from_places" class="form-control" placeholder="Enter a location" />
-                        <input id="origin" type="hidden" name="origin" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Destination: </label>
-                        <input id="to_places" class="form-control" placeholder="Enter a location" />
-                        <input id="destination" type="hidden" name="destination" required />
-                    </div>
-
-                    <input type="submit" value="Calculate" class="btn btn-primary" />
-                </form>
-                <div id="result">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Distance In Mile :
-                            <span id="in_mile" class="badge badge-primary badge-pill"></span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Distance is Kilo:
-                            <span id='in_kilo' class="badge badge-primary badge-pill"></span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            IN TEXT:
-                            <span id="duration_text" class="badge badge-primary badge-pill"></span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            IN MINUTES:
-                            <span id="duration_value" class="badge badge-primary badge-pill"></span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            FROM:
-                            <span id="from" class="badge badge-primary badge-pill"></span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            TO:
-                            <span id="to" class="badge badge-primary badge-pill"></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
         $(function () {
             // add input listeners
             google.maps.event.addDomListener(window, 'load', function () {
@@ -113,6 +48,7 @@
                         var duration = response.rows[0].elements[0].duration;
                         console.log(response.rows[0].elements[0].distance);
                         var distance_in_kilo = distance.value / 1000; // the kilom
+                        console.log(distance_in_kilo);
                         var distance_in_mile = distance.value / 1609.34; // the mile
                         var duration_text = duration.text;
                         var duration_value = duration.value;
@@ -133,7 +69,10 @@
 
         });
 
-    </script>
-</body>
+        window.onload = function() {
+            //when the document is finished loading, replace everything
+            //between the <a ...> </a> tags with the value of splitText
+        document.getElementById("myLink").innerHTML=distance_in_kilo;
+     } 
 
-</html>
+   
