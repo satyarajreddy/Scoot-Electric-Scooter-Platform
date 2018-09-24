@@ -170,20 +170,9 @@ app.get("/creditcard", function (req, res) {
     res.render("creditcard");
 });
 
-<<<<<<< HEAD
 app.get("/calculator", function (req, res) {
     res.render("calculator");
 });
-=======
-function isLoggedIn(req,res,next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-        req.flash("error", "You need to be logged in to do that!");
-        res.redirect("/login");
-    
-}
->>>>>>> 2e072999cacbafe7a1e8ee194fa20c0063f210bf
 
 
 
