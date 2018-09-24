@@ -81,7 +81,7 @@ app.get("/pricing", isLoggedIn, function(req,res){
     res.render("pricing");
 });
 
-app.get("/payment", function(req,res){
+app.get("/payment",isLoggedIn, function(req,res){
     res.render("payment");
 });
 
@@ -127,6 +127,10 @@ app.get("/rides", function (req, res) {
     res.render("rides");
 });
 
+app.get("/pr",isLoggedIn, function (req, res) {
+    res.render("pr");
+});
+
 
 
 //register route
@@ -154,7 +158,9 @@ app.get("/login", function(req,res){
 app.post("/login", passport.authenticate("local",
 {
     successRedirect: "/index",
-    failureRedirect:"/login"
+    failureRedirect:"/login",
+    badRequestMessage : 'Missing username or password.',
+    failureFlash: true
 }),  function(req,res){
     // empty callback no need
 });
