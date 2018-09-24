@@ -81,7 +81,7 @@ app.get("/pricing", isLoggedIn, function(req,res){
     res.render("pricing");
 });
 
-app.get("/payment", function(req,res){
+app.get("/payment",isLoggedIn, function(req,res){
     res.render("payment");
 });
 
@@ -135,12 +135,16 @@ app.get("/rides", function (req, res) {
     res.render("rides");
 });
 
+app.get("/pr",isLoggedIn, function (req, res) {
+    res.render("pr");
+});
+
 
 
 //register route
 app.post("/register", function(req,res){
     var newRider = new Rider({username:req.body.username,
-    email:req.body.email,aadhar:req.body.aadhar_no,bday:req.body.bday,gender:req.body.gender});
+    email:req.body.email,aadhar:req.body.aadhar_no,bday:req.body.bday,gender:req.body.gender,mobile:req.body.mobile});
     Rider.register(newRider , req.body.password, function(err,user){
         if(err){
             console.log(err);
@@ -148,7 +152,7 @@ app.post("/register", function(req,res){
             res.redirect("register");
         }else{
             passport.authenticate("local")(req,res, function(){
-                res.redirect("/");
+                res.redirect("/index");
             })
         }
     })
@@ -162,7 +166,9 @@ app.get("/login", function(req,res){
 app.post("/login", passport.authenticate("local",
 {
     successRedirect: "/index",
-    failureRedirect:"/login"
+    failureRedirect:"/login",
+    badRequestMessage : 'Missing username or password.',
+    failureFlash: true
 }),  function(req,res){
     // empty callback no need
 });
@@ -174,7 +180,7 @@ app.get("/logout", function(req,res){
     res.redirect("/index");
 });
 
-app.get("/creditcard", function (req, res) {
+app.get("/creditcard",isLoggedIn, function (req, res) {
     res.render("creditcard");
 });
 
@@ -182,7 +188,17 @@ app.get("/calculator", function (req, res) {
     res.render("calculator");
 });
 
+<<<<<<< HEAD
+=======
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    req.flash("error", "You need to be logged in to do that!");
+    res.redirect("/login");
+>>>>>>> 5a4af65eac8af9f1c31a65aeb47f80f155de8c83
 
+}
 
 //port
 app.listen(3000,function(){
