@@ -8,7 +8,8 @@ var riderSchema = new mongoose.Schema({
     email: { type: String, unique: true, required: true },
     aadhar: { type: Number, index: true, unique: true, required: true },
     bday:Date,
-    gender:String
+    gender:String,
+    mobile:{ type: Number, index: true, unique: true, required: true }
 
 
 });

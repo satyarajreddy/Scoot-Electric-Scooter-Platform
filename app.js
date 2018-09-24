@@ -136,7 +136,7 @@ app.get("/pr",isLoggedIn, function (req, res) {
 //register route
 app.post("/register", function(req,res){
     var newRider = new Rider({username:req.body.username,
-    email:req.body.email,aadhar:req.body.aadhar_no,bday:req.body.bday,gender:req.body.gender});
+    email:req.body.email,aadhar:req.body.aadhar_no,bday:req.body.bday,gender:req.body.gender,mobile:req.body.mobile});
     Rider.register(newRider , req.body.password, function(err,user){
         if(err){
             console.log(err);
@@ -144,7 +144,7 @@ app.post("/register", function(req,res){
             res.redirect("register");
         }else{
             passport.authenticate("local")(req,res, function(){
-                res.redirect("/");
+                res.redirect("/index");
             })
         }
     })
@@ -172,26 +172,22 @@ app.get("/logout", function(req,res){
     res.redirect("/index");
 });
 
-app.get("/creditcard", function (req, res) {
+app.get("/creditcard",isLoggedIn, function (req, res) {
     res.render("creditcard");
 });
 
-<<<<<<< HEAD
 app.get("/calculator", function (req, res) {
     res.render("calculator");
 });
-=======
-function isLoggedIn(req,res,next){
-    if(req.isAuthenticated()){
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
         return next();
     }
-        req.flash("error", "You need to be logged in to do that!");
-        res.redirect("/login");
-    
+    req.flash("error", "You need to be logged in to do that!");
+    res.redirect("/login");
+
 }
->>>>>>> 2e072999cacbafe7a1e8ee194fa20c0063f210bf
-
-
 
 //port
 app.listen(3000,function(){
